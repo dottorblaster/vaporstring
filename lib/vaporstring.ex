@@ -16,7 +16,8 @@ defmodule Vaporstring do
 
   """
   def parse(text) do
-    String.graphemes(text)
+    text
+    |> String.graphemes()
     |> Enum.map(fn x -> Vaporstring.Graphemes.glyph(x) end)
     |> Enum.join()
   end
